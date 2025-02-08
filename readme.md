@@ -219,3 +219,165 @@ A queue is a linear data structure that follows the First In, First Out (FIFO) p
 - **Print Queue**: Used in managing print jobs in printers.
 
 Understanding stacks and queues is essential for solving problems that require ordered data processing and efficient element management.
+
+## Trees
+
+A tree is a hierarchical data structure consisting of nodes, with a single node designated as the root. Each node can have zero or more child nodes, and nodes with no children are called leaves. Trees are widely used in computer science for representing hierarchical data and enabling efficient searching and sorting operations.
+
+### Types of Binary Trees
+
+1. **Full Binary Tree**: A binary tree in which every node has either 0 or 2 children. No node has only one child.
+2. **Perfect Binary Tree**: A binary tree in which all the internal nodes have exactly two children, and all the leaf nodes are at the same level.
+3. **Complete Binary Tree**: A binary tree in which all levels are completely filled except possibly the last level, which is filled from left to right.
+
+Understanding these types of binary trees helps in analyzing and implementing various tree-based algorithms efficiently.
+
+### Types of Trees
+
+1. **Binary Tree**: Each node has at most two children, referred to as the left child and the right child.
+2. **Binary Search Tree (BST)**: A binary tree where the left child contains values less than the parent node, and the right child contains values greater than the parent node.
+3. **Balanced Tree**: A tree where the height difference between the left and right subtrees of any node is minimal, ensuring efficient operations.
+4. **AVL Tree**: A self-balancing binary search tree where the height difference between the left and right subtrees of any node is at most one.
+5. **Red-Black Tree**: A self-balancing binary search tree with an additional property that ensures the tree remains balanced during insertions and deletions.
+6. **B-Tree**: A self-balancing search tree commonly used in databases and file systems, where nodes can have multiple children.
+
+### Operations on Trees
+
+- **Insertion**: Adding a new node to the tree.
+ - Time Complexity: O(log n) for balanced trees, O(n) for unbalanced trees.
+- **Deletion**: Removing a node from the tree.
+ - Time Complexity: O(log n) for balanced trees, O(n) for unbalanced trees.
+- **Traversal**: Accessing each node in the tree.
+ - Time Complexity: O(n)
+ - Types of Traversal:
+  - **In-order**: Left subtree, root, right subtree.
+  - **Pre-order**: Root, left subtree, right subtree.
+  - **Post-order**: Left subtree, right subtree, root.
+  - **Level-order**: Nodes are visited level by level from top to bottom.
+- **Search**: Finding a node with a specific value.
+ - Time Complexity: O(log n) for balanced trees, O(n) for unbalanced trees.
+
+### Applications of Trees
+
+- **Hierarchical Data Representation**: Used in representing hierarchical data such as file systems and organizational structures.
+- **Searching and Sorting**: Used in implementing efficient searching and sorting algorithms.
+- **Expression Parsing**: Used in parsing and evaluating mathematical expressions.
+- **Databases**: Used in indexing and managing hierarchical data in databases.
+
+Understanding trees is fundamental for solving problems that require hierarchical data representation and efficient searching and sorting operations.
+
+## Hash Tables
+
+A hash table is a data structure that maps keys to values for efficient lookup. It uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+### Hash Function
+
+A hash function takes an input (or key) and returns an integer, which is used as an index to store the associated value in the hash table. A good hash function distributes keys uniformly across the array to minimize collisions.
+
+### Handling Collisions
+
+Collisions occur when two keys hash to the same index. There are several methods to handle collisions:
+
+1. **Chaining**: Each bucket contains a linked list of entries that hash to the same index.
+2. **Open Addressing**: All elements are stored in the array itself, and a collision is resolved by probing (searching) for the next empty slot.
+  - **Linear Probing**: Check the next slot sequentially.
+  - **Quadratic Probing**: Check slots at increasing intervals.
+  - **Double Hashing**: Use a second hash function to determine the interval between probes.
+
+### Operations on Hash Tables
+
+- **Insertion**: Add a key-value pair to the hash table.
+  - Average Time Complexity: O(1)
+- **Deletion**: Remove a key-value pair from the hash table.
+  - Average Time Complexity: O(1)
+- **Search**: Find the value associated with a given key.
+  - Average Time Complexity: O(1)
+
+### Applications of Hash Tables
+
+- **Database Indexing**: Efficiently retrieve records from a database.
+- **Caching**: Store and retrieve frequently accessed data quickly.
+- **Symbol Tables**: Used in compilers to store information about variables and functions.
+- **Sets**: Implementing a set data structure to check for membership efficiently.
+
+Understanding hash tables is crucial for designing efficient algorithms that require fast data retrieval and storage.
+
+## Graphs
+
+A graph is a data structure consisting of a set of nodes (vertices) and a set of edges that connect pairs of nodes. Graphs are used to represent relationships between objects and are widely used in computer science for modeling networks, social connections, and various other structures.
+
+### Types of Graphs
+
+1. **Undirected Graph**: A graph where edges have no direction. The edge (u, v) is the same as (v, u).
+2. **Directed Graph (Digraph)**: A graph where edges have a direction. The edge (u, v) is different from (v, u).
+3. **Weighted Graph**: A graph where edges have weights or costs associated with them.
+4. **Unweighted Graph**: A graph where edges do not have weights.
+5. **Cyclic Graph**: A graph that contains at least one cycle.
+6. **Acyclic Graph**: A graph that does not contain any cycles.
+7. **Connected Graph**: A graph where there is a path between every pair of vertices.
+8. **Disconnected Graph**: A graph where at least one pair of vertices does not have a path between them.
+
+### Graph Representation
+
+1. **Adjacency Matrix**: A 2D array where the element at row i and column j indicates the presence (and possibly the weight) of an edge between vertices i and j.
+2. **Adjacency List**: An array of lists where the ith list contains all the vertices adjacent to the ith vertex.
+
+### Operations on Graphs
+
+- **Traversal**: Visiting all the vertices and edges in a graph.
+ - **Depth-First Search (DFS)**: Explores as far as possible along each branch before backtracking.
+ - **Breadth-First Search (BFS)**: Explores all neighbors at the present depth before moving on to nodes at the next depth level.
+- **Shortest Path**: Finding the shortest path between two vertices.
+ - **Dijkstra's Algorithm**: Finds the shortest path from a source vertex to all other vertices in a weighted graph.
+ - **Bellman-Ford Algorithm**: Finds the shortest path from a source vertex to all other vertices, handling negative weights.
+ - **Floyd-Warshall Algorithm**: Finds shortest paths between all pairs of vertices.
+- **Minimum Spanning Tree (MST)**: Finding a subset of edges that connects all vertices with the minimum total edge weight.
+ - **Kruskal's Algorithm**: Builds the MST by adding edges in increasing order of weight.
+ - **Prim's Algorithm**: Builds the MST by starting from a vertex and adding the smallest edge that connects a vertex in the MST to a vertex outside the MST.
+- **Cycle Detection**: Determining if a graph contains any cycles.
+ - **Union-Find Algorithm**: Used for cycle detection in undirected graphs.
+ - **DFS**: Used for cycle detection in directed graphs.
+
+### Applications of Graphs
+
+- **Social Networks**: Modeling relationships and interactions between users.
+- **Navigation Systems**: Finding the shortest path between locations.
+- **Network Routing**: Optimizing data transfer paths in computer networks.
+- **Dependency Resolution**: Managing dependencies in software packages and build systems.
+- **Recommendation Systems**: Suggesting products or content based on user interactions.
+
+Understanding graphs is essential for solving problems that involve relationships and connections between entities, enabling efficient algorithms for traversal, pathfinding, and network analysis.
+
+## Heaps
+
+A heap is a specialized tree-based data structure that satisfies the heap property. Heaps are commonly used to implement priority queues and for efficient sorting algorithms like Heap Sort.
+
+### Types of Heaps
+
+1. **Max Heap**: In a max heap, the value of each node is greater than or equal to the values of its children. The largest value is at the root.
+2. **Min Heap**: In a min heap, the value of each node is less than or equal to the values of its children. The smallest value is at the root.
+
+### Properties of Heaps
+
+- **Complete Binary Tree**: Heaps are complete binary trees, meaning all levels are fully filled except possibly the last level, which is filled from left to right.
+- **Heap Property**: In a max heap, each parent node is greater than or equal to its children. In a min heap, each parent node is less than or equal to its children.
+
+### Operations on Heaps
+
+- **Insertion**: Adding a new element to the heap while maintaining the heap property.
+  - Time Complexity: O(log n)
+- **Deletion**: Removing the root element (maximum in max heap, minimum in min heap) and maintaining the heap property.
+  - Time Complexity: O(log n)
+- **Peek**: Accessing the root element without removing it.
+  - Time Complexity: O(1)
+- **Heapify**: Converting an arbitrary array into a heap.
+  - Time Complexity: O(n)
+
+### Applications of Heaps
+
+- **Priority Queues**: Implementing priority queues where elements are processed based on their priority.
+- **Heap Sort**: An efficient comparison-based sorting algorithm with a time complexity of O(n log n).
+- **Graph Algorithms**: Used in algorithms like Dijkstra's and Prim's for finding the shortest path and minimum spanning tree, respectively.
+- **Order Statistics**: Finding the k-th smallest (or largest) element in an array.
+
+Understanding heaps is crucial for designing efficient algorithms that require dynamic ordering and quick access to the largest or smallest elements.
