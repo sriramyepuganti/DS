@@ -27,4 +27,32 @@ class Heap {
    temp = parentIndex;
   }
  };
+
+ #sinkDown = (index) => {
+  let temp = index;
+  const leftChildIndex = this.#leftChildIndex(temp);
+  const rightChildIndex = this.#rightChildIndex(temp);
+  if (this.#heap[leftChildIndex] > this.#heap[temp] || this.#heap[rightChildIndex] > this.#heap[temp]) {
+   if (this.#heap[leftChildIndex] > this.#heap[rightChildIndex]) {
+    this.#swap(temp, leftChildIndex);
+    this.#sinkDown(leftChildIndex);
+   } else {
+    this.#swap(temp, rightChildIndex);
+    this.#sinkDown(rightChildIndex);
+   }
+  }
+ };
+
+ remove = () => {
+  if (this.#heap.length === 0) {
+   return null;
+  }
+  if (this.#heap.length === 1) {
+   return this.#heap.pop();
+  }
+  const max = this.#heap[0];
+  this.#heap[0] = this.#heap.pop();
+  this.#sinkDown(0);
+  return max;
+ };
 }
